@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --basic-background-color: #F4F5FA;
+    --basic-background-form: #ffffff;
+    --basic-border-input: #E1E3EE;
+    --basic-card-shadow: #E2E7FF;
+    --basic-curcle-color:#A6ACCC;
+    --basic-border-bottom: #DDDFED;
+    --basic-failed-payment: #EA717F;
+
+    --basic-form-text: #1C154E;
+    --basic-input-text: #D0D3E2;
+    --basic-add-text: #23C967;
+    --basic-secure-text: #AFB4CC;
+    --basic-input-black: #000;
+    --basic-input-small-text: #A7A2CB;
+}
+
+.form--scroll::-webkit-scrollbar {
+    width: 4px;
+    height: 0;
+    background-color: var(--basic-border-input);
+}
+
+.form--scroll::-webkit-scrollbar-track {
+    height: 358px;
+    width: 4px;
+}
+
+.form--scroll::-webkit-scrollbar-thumb {
+    background-color: var(--basic-add-text);
+    width: 4px;
+    border-radius: 5px;
+    border: 4px solid var(--basic-add-text);
+}
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.page{
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--basic-background-color);
+    box-sizing: border-box;
+    font-family: 'Gilroy-regular', sans-serif;
+}
+
+@font-face {
+    font-family: "Gilroy-regular";
+    font-weight: 400;
+    font-style: normal;
+    src: local("Gilroy-regular"), url("../fonts/gilroy-regular.woff2"), url("../fonts/gilroy-regular.woff");
+    color: var(--basic-form-text);
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: "Gilroy-medium";
+    font-weight: 500;
+    font-style: normal;
+    src: local("Gilroy-medium"), url("../fonts/gilroy-medium.woff"), url("../fonts/gilroy-medium.woff");
+    color: var(--basic-form-text);
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 700;
+    font-style: normal;
+    src: local("Gilroy"), url("../fonts/gilroy-bold.woff2"), url("../fonts/gilroy-bold.woff");
+    color: var(--basic-form-text);
+    font-size: 18px;
+}
+
+.card {
+    position: relative;
+    margin-top: 138px;
+    margin-left: 56%;
+    margin-right: 11%;
+    float: left;
+    display: block;
+    background-color: var(--basic-background-form);
+    width: 440px;
+    height: 535px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow:10px 10px 60px var(--basic-card-shadow);
+}
+
+.card::before{
+    content:"";
+    display: block;
+    position: absolute;
+    top: -17px;
+    right: -33px;
+    background-image: url(../img/curcl.png);
+    width: 102px;
+    height: 118px;
+    z-index: -1;
+}
+
+.invisible {
+    display: none;
+}
+
+.form {
+    padding: 35px 35px 0 35px;
+    font-family: 'Gilroy-medium', sans-serif;
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 500;
+    color: var(--basic-form-text);
+}
+
+.form_fieldset {
+    border: none;
+    padding: 0;
+    position: relative;
+}
+
+.form_fieldset-title,
+.form_add-product {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.form_fieldset-label {
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.form_fieldset-input {
+    width: 100%;
+    border: none;
+    line-height: 23px;
+    margin-bottom: 22px;
+    border-bottom: 1.5px solid var(--basic-border-input);
+}
+
+.form_fieldset-input::placeholder {
+    color: var(--basic-input-text);
+}
+
+.form_add-product{
+    color: var(--basic-add-text);
+    position: relative;
+}
+
+.form_discount {
+    margin-bottom: 12px;
+}
+
+.form_button {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background-color: var(--basic-add-text);
+    border-radius: 15px;
+    color: var(--basic-background-form);
+    border: none;
+    margin-bottom: 11px;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 18px;
+}
+
+.form_secure {
+    color: var(--basic-secure-text);
+    font-size: 14px;
+    font-family: 'Gilroy-regular', sans-serif;
+    text-align: center;
+    line-height: 17px;
+    position: relative;
+}
+
+.form_fieldset--border-wrapper {
+    overflow: hidden;
+    border: 1.5px solid var(--basic-border-bottom);
+}
+
+.form_fieldset-content {
+    margin-bottom: 12px;
+}
+
+.form_fieldset--border-wrapper{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.form_fieldset--input-wrapper{
+    position: relative;
+    height: 58px;
+    border-bottom: 1.5px solid var(--basic-border-bottom);
+}
+
+.form_fieldset--input-wrapper:last-child{
+    border-bottom: none;
+}
+
+.form_fieldset--input-wrapper:hover{
+    z-index: 1;
+    background-color: var(--basic-background-color);
+    transition: 0.2s;
+}
+
+.form_fieldset-radio{
+    width: 22px;
+    height: 22px;
+    margin: auto 12px;
+}
+
+.form_fieldset-label--input{
+    display: inline-block;
+    min-width: 85%;
+    color: var(--basic-input-black);
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+.form_fieldset--input-wrapper:last-child .form_fieldset-label--input{
+    margin: 18px 0;
+}
+
+.form_fieldset-label--wrapper{
+    font-size: 13px;
+    color: var(--basic-input-small-text);
+    font-weight: 500;
+    line-height: 15px;
+}
+
+.form_fieldset--input-wrapper:hover .form_fieldset-label--wrapper{
+    color: var(--basic-add-text);
+}
+
+.form_fieldset--add-product {
+    margin-bottom: 17px;
+}
+
+.third--form {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 35px;
+    top: 42px;
+    bottom: 65px;
+    overflow: hidden;
+}
+
+.form--scroll{
+    position: relative;
+    overflow-y: scroll;
+    height: 362px;
+    margin-bottom: 17px;
+    padding-right: 20px;
+    margin-right: -20px;
+}
+
+.second-card input {
+    visibility: hidden;
+}
+
+.form_fieldset-radio::before{
+    content: "";
+    position: absolute;
+    display: block;
+    visibility: visible;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--basic-border-input);
+    top: 15px;
+    left: 13px;
+    z-index: 2;
+}
+
+.form_fieldset-radio:checked + .form_fieldset-label--input::after{
+    content: "";
+    position: absolute;
+    display: block;
+    visibility: visible;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--basic-add-text);
+    top: 21px;
+    left: 19px;
+    z-index: 3;
+}
+
+.successfull-payment,
+.failed-payment {
+    box-sizing: border-box;
+    padding: 35px 35px 0 35px;
+}
+
+.successfull-payment_title,
+.failed-payment_title {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--basic-form-text);
+    margin-bottom: 12px;
+}
+
+.successfull-payment_content,
+.failed-payment_content {
+    font-family: 'Gilroy-medium', sans-serif;
+    font-size: 16px;
+    line-height: 23px;
+    opacity: 0.8;
+    color: var(--basic-form-text);
+    letter-spacing: 0.5px;
+    margin-bottom: 64px;
+}
+
+.failed-payment_content{
+    margin-bottom: 3px;
+}
+
+.successfull-payment_img,
+.failed-payment_img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 72px;
+}
+
+.failed-payment_img {
+    margin-bottom: 32px;
+}
+
+.failed-payment_button{
+    background-color: var(--basic-failed-payment);
+}
+
+.form_add-product::before,
+.form--scroll .form_fieldset::before {
+    content: "";
+    position: absolute;
+    border: 1px solid var(--basic-add-text);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    top: 5px;
+    left: 165px;
+}
+
+.form_add-product::after,
+.form--scroll .form_fieldset::after {
+    content: "+";
+    position: absolute;
+    top: 1px;
+    left: 167px;
+    font-size: 20px;
+    font-family: 'Gilroy-regular', sans-serif;
+    color: var(--basic-add-text);
+}
+
+.form_secure::before {
+    content:"";
+    position: absolute;
+    top: 1px;
+    left: 84px;
+    background-image: url('../img/icon_lock.svg');
+    width: 9px;
+    height: 13px;
+    background-repeat: no-repeat;
+}
+
+.form--scroll .form_fieldset::before{
+    top: -32px;
+    left: 85px;
+}
+
+.form--scroll .form_fieldset::after {
+    transform: rotate(45deg);
+    top: -35.5px;
+    left: 87px;
+}
+
+.form--scroll .form_fieldset:first-child::before,
+.form--scroll .form_fieldset:first-child::after {
+    visibility: hidden;
+}
+
+@keyframes donut-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.loader-button {
+    position: absolute;
+    top: 5px;
+    left: 47%;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    border: 4px solid var(--basic-background-color);
+    border-left-color: var(--basic-add-text);
+    border-radius: 50%;
+    animation: donut-spin 5s linear infinite;
+  }
