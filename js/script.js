@@ -87,8 +87,10 @@ buttonPay.addEventListener('click', function(){
     buttonPay.append(loader.cloneNode(true));
     setInterval(
         () => {
+            buttonPay.remove(loader);
             thirdCard.classList.add('invisible');
             if (randomValue === 1) {
+               buttonPay.remove(loader);
                successfullPayment.classList.remove('invisible');
                window.location.hash = '#paymentsuccess';
             } else {
@@ -98,12 +100,13 @@ buttonPay.addEventListener('click', function(){
                 }
             }
         },
-        3000
+        2000
     ); 
 })
 
 successfullPayment.addEventListener('click', function(){
     successfullPayment.classList.add('invisible');
+
     firstCard.classList.remove('invisible');
     window.location.href = 'index.html';
 })
@@ -120,6 +123,7 @@ firstCardPay.addEventListener('click', function() {
     firstCardPay.append(loader.cloneNode(true));
     setInterval(
         () => {
+            firstCardPay.remove(loader);
             firstCard.classList.add('invisible');
             if (randomValue === 1) {
                successfullPayment.classList.remove('invisible');
